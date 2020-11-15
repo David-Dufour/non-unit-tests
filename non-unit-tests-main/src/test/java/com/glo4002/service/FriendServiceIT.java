@@ -24,14 +24,12 @@ public class FriendServiceIT {
     private static final String A_NAME = "This is a valid name";
     private static final String INVALID_NAME = null;
 
-    private FriendRepository friendRepositoryMock;
-
     private FriendService friendService;
 
     @BeforeEach
     public void setup() {
         friendRepositoryMock = mock(FriendRepository.class);
-        friendService = new FriendService(new NameValidator(), new FriendFactory(), friendRepositoryMock, new FriendAssembler());
+        friendService = new FriendService(new NameValidator(), new FriendFactory(), new InMemoryFriendRepository(), new FriendAssembler());
     }
 
     @Test
