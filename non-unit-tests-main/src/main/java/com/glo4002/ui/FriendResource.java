@@ -23,7 +23,6 @@ public class FriendResource {
     @POST
     @Path("/make")
     @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
     public Response makeFriend(@QueryParam("name") String name) {
         friendService.makeFriend(name);
         return Response.ok().build();
