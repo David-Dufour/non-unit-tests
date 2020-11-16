@@ -2,11 +2,7 @@ package com.glo4002;
 
 public class FriendMain implements Runnable {
 
-    private static FriendContext friendContext;
-
-    public FriendMain() {
-        friendContext = new FriendContext();
-    }
+    private FriendContext friendContext;
 
     public static void main(String[] args) {
         FriendMain main = new FriendMain();
@@ -16,6 +12,7 @@ public class FriendMain implements Runnable {
     @Override
     public void run() {
         try {
+            friendContext = new FriendContext();
             friendContext.start();
         } catch (Exception e) {
             e.printStackTrace();
